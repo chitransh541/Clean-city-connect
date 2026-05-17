@@ -1,0 +1,95 @@
+/* ============================================
+   WAVE BUTTON – Water-fill hover animation
+   ============================================ */
+.wave-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 32px;
+  border: 2px solid var(--color-leaf-500);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-leaf-600);
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.5s ease, box-shadow 0.4s ease, text-shadow 0.4s ease, opacity 0.3s ease;
+  z-index: 1;
+}
+
+.wave-btn--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* The green water fill – uses percentage so it scales with any button size */
+.wave-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, var(--color-leaf-400), var(--color-leaf-500));
+  transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -2;
+}
+
+/* The wave surface – percentage-based positioning so it works on any width */
+.wave-btn::after {
+  content: '';
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 12px;
+  bottom: -12px;
+  background: var(--color-leaf-400);
+  border-radius: 40%;
+  transition: bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  animation: none;
+}
+
+.wave-btn:not(.wave-btn--disabled):hover::before {
+  height: 50%;
+}
+
+.wave-btn:not(.wave-btn--disabled):hover::after {
+  bottom: calc(50% - 6px);
+  animation: waveMotion 1.8s ease-in-out infinite;
+}
+
+.wave-btn:not(.wave-btn--disabled):hover {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-green);
+}
+
+@keyframes waveMotion {
+  0%   { transform: translateX(0) scaleY(1); }
+  25%  { transform: translateX(3px) scaleY(1.3); }
+  50%  { transform: translateX(0) scaleY(1); }
+  75%  { transform: translateX(-3px) scaleY(1.3); }
+  100% { transform: translateX(0) scaleY(1); }
+}
+
+.wave-btn--sm {
+  padding: 8px 20px;
+  font-size: 0.875rem;
+}
+
+.wave-btn--lg {
+  padding: 16px 40px;
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .wave-btn--lg {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+}

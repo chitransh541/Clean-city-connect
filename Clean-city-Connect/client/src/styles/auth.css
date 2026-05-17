@@ -1,0 +1,143 @@
+/* ============================================
+   AUTH PAGES (Login & Signup)
+   ============================================ */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Left Illustration Panel */
+.auth-illustration {
+  display: none;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .auth-illustration {
+    display: flex;
+    width: 50%;
+  }
+}
+
+.auth-illustration--login { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); }
+.auth-illustration--signup { background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 50%, #86efac 100%); }
+
+.auth-illustration-content {
+  position: relative;
+  z-index: 10;
+  padding: 3rem;
+  text-align: center;
+  max-width: 28rem;
+}
+
+.auth-illustration-img {
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-xl);
+  margin-bottom: 2rem;
+}
+
+.auth-illustration-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-leaf-800);
+  margin-bottom: 0.75rem;
+}
+
+.auth-illustration-desc {
+  color: var(--color-leaf-700);
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+/* Decorative circles */
+.auth-bg-circle-1 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(24px);
+}
+
+.auth-illustration--login .auth-bg-circle-1 {
+  top: 2.5rem; left: 2.5rem; width: 8rem; height: 8rem; background-color: var(--color-leaf-300); opacity: 0.3;
+}
+.auth-illustration--login .auth-bg-circle-2 {
+  position: absolute; bottom: 5rem; right: 2.5rem; width: 12rem; height: 12rem; background-color: var(--color-leaf-200); border-radius: 50%; opacity: 0.4; filter: blur(36px);
+}
+.auth-illustration--login .auth-bg-svg {
+  position: absolute; top: 50%; left: 0; opacity: 0.2;
+}
+
+.auth-illustration--signup .auth-bg-circle-1 {
+  top: 2.5rem; right: 2.5rem; width: 10rem; height: 10rem; background-color: var(--color-leaf-400); opacity: 0.2;
+}
+.auth-illustration--signup .auth-bg-circle-2 {
+  position: absolute; bottom: 2.5rem; left: 2.5rem; width: 14rem; height: 14rem; background-color: var(--color-leaf-200); border-radius: 50%; opacity: 0.3; filter: blur(36px);
+}
+
+/* Right Form Panel */
+.auth-form-panel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+@media (min-width: 1024px) {
+  .auth-form-panel { width: 50%; }
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 28rem;
+}
+
+/* Mobile tagline */
+.auth-mobile-tagline {
+  display: block;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .auth-mobile-tagline { display: none; }
+}
+
+.auth-mobile-tagline-icon { font-size: 2.25rem; }
+.auth-mobile-tagline-text { color: var(--color-leaf-600); font-weight: 500; margin-top: 0.5rem; }
+
+/* Form Header */
+.auth-form-title { font-size: 1.875rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem; }
+.auth-form-subtitle { color: #6b7280; margin-bottom: 2.5rem; }
+
+/* Form elements */
+.auth-form { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.auth-form-link { font-size: 0.875rem; color: var(--color-leaf-600); font-weight: 500; transition: color 0.2s ease; }
+.auth-form-link:hover { color: var(--color-leaf-700); }
+.auth-form-link-container { display: flex; justify-content: flex-end; padding-top: 0.5rem; }
+
+.auth-form-footer { margin-top: 2rem; text-align: center; color: #6b7280; }
+
+.auth-password-toggle { position: absolute; right: 0.75rem; top: 38px; color: #9ca3af; transition: color 0.2s ease; }
+.auth-password-toggle:hover { color: #4b5563; }
+
+.auth-btn-content { display: flex; align-items: center; gap: 0.5rem; }
+.auth-btn-wrapper { width: 100%; margin-top: 1.5rem; }
+.auth-btn-wrapper .wave-btn { width: 100%; }
+
+/* OTP Verification */
+.otp-header { text-align: center; }
+.otp-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+.otp-title { font-size: 1.875rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem; }
+.otp-subtitle { color: #6b7280; margin-bottom: 2rem; }
+.otp-subtitle-phone { color: #374151; font-weight: 700; }
+
+.otp-input { text-align: center; font-size: 1.875rem; letter-spacing: 0.5em; font-weight: 700; }
+
+.otp-footer { text-align: center; color: #6b7280; font-size: 0.875rem; margin-top: 1rem; }
+.otp-back-btn { display: block; margin: 0 auto; margin-top: 1rem; font-size: 0.875rem; color: #9ca3af; transition: color 0.2s ease; }
+.otp-back-btn:hover { color: #4b5563; }

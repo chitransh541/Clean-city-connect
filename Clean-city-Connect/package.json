@@ -1,0 +1,18 @@
+{
+  "name": "cleancity-connect",
+  "version": "1.0.0",
+  "description": "CleanCity Connect - Civic Complaint Management Platform",
+  "private": true,
+  "scripts": {
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "install:all": "cd client && npm install && cd ../server && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  },
+  "dependencies": {
+    "replicate": "^1.4.0"
+  }
+}
